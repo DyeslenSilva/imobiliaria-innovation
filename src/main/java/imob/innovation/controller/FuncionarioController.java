@@ -16,10 +16,36 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
+	@RequestMapping("/cadastraFuncionario")
 	public ResponseEntity<Object> cadastroFuncionario(@RequestBody Funcionario funcionario){
 		funcionarioService.salvarFuncionario(funcionario);
 		return ResponseEntity.ok().build();
 	}
+	
+	@RequestMapping("/listaDeFuncionarios")
+	public ResponseEntity<Object> getFuncionarios(){
+		return ResponseEntity.ok(funcionarioService.getFuncionarios());
+	}
+	
+	@RequestMapping("/buscarFuncionario/{idFuncionario}")
+	public ResponseEntity<Object> getFuncionarioPorID(@RequestBody Integer idFuncionario){
+		funcionarioService.getFuncionario(idFuncionario);
+		return ResponseEntity.ok().build();
+	}
+	
+	@RequestMapping("/editarFuncionario/{idFuncionario}")
+	public ResponseEntity<Object> editaFuncionario(@RequestBody Integer idFuncionario){
+		Funcionario funcionario = funcionarioService.getFuncionario(idFuncionario);
+		if(funcionario !=null) {
+			return ResponseEntity.ok().build();
+		}else {
+			return ResponseEntity.badRequest().build();
+		}
+	}
+	
+	
+	
+	
 	
 	
 }
