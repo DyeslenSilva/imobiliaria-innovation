@@ -24,6 +24,17 @@ public class Funcionario {
 	
 	@Column
 	private String nomedoFuncionario;
+	
+	@Column
+	private String rg;
+		
+	@Column
+	private String cpf;
+	
+	@Column
+	private String endereco;
+	
+	
 	@Column
 	private String senha;
 	

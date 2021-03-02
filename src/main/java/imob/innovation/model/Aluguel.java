@@ -19,6 +19,8 @@ public class Aluguel extends Contrato{
 	
 	private String status;
 	
+	private String periodoAluguel;
+	
 	private boolean ativado;
 	private boolean desativado;
 }

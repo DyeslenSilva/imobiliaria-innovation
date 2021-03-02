@@ -26,7 +26,7 @@ public class Imovel {
 	@Column
 	private String proprietario;
 	@Column
-	private String endereco;
+	private String endereco;		
 	@Column
 	private double valorImovel;
 	@Column
