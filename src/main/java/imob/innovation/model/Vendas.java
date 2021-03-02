@@ -14,6 +14,10 @@ public class Vendas extends Contrato{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idVendas;
 	
+	private String nomeDoCliente;
+	private String endereco;
+	private String rg,cpf;
+	
 	@Column
 	private double valorParcela;
 	

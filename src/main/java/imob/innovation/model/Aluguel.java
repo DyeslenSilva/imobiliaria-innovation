@@ -13,6 +13,11 @@ public class Aluguel extends Contrato{
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idAluguel;
+
+	private String nomeProprietario;
+	
+	private String nomeLocador;
+	
 	
 	@Column
 	private double valorAluguel;
