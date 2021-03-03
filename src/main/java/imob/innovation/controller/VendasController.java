@@ -43,4 +43,10 @@ public class VendasController {
 			return ResponseEntity.badRequest().build();
 		}
 	}
+	
+	@RequestMapping("/deleteVenda")
+	public ResponseEntity<Object> deleteVenda(@RequestBody Integer[]lista){
+		vendasService.apagarVenda(lista);
+		return ResponseEntity.ok().build();
+	}
 }

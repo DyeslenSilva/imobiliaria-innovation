@@ -54,6 +54,12 @@ public class ClienteController {
 		}
 	}
 	
+	@RequestMapping("/deleteCliente")
+	public ResponseEntity<Object> deleteCliente(@PathVariable int[]lista){
+		clienteService.removeCliente(lista);
+		return ResponseEntity.ok().build();
+	}
+	
 	@RequestMapping("/selecionaServico/")
 	public ResponseEntity<Cliente> selecionaServico(@RequestBody ListaDeServicos listaDeServicos){
 		Cliente cliente = clienteService.getCliente(listaDeServicos.getIdCliente());

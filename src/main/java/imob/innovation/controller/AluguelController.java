@@ -44,4 +44,10 @@ public class AluguelController {
 		}
 	}
 	
+	@RequestMapping("/deleteAlguel")
+	public ResponseEntity<Object> deleteAluguel(Integer[]lista){
+		aluguelService.apagarAluguel(lista);
+		return ResponseEntity.ok().build();
+	}
+	
 }

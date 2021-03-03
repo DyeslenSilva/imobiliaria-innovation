@@ -43,6 +43,12 @@ public class FuncionarioController {
 		}
 	}
 	
+	@RequestMapping("/apagarFuncionario")
+	public ResponseEntity<Object> apagarFuncionario(@RequestBody Integer[]list){
+		funcionarioService.removeFucionario(list);
+		return ResponseEntity.ok().build();
+	}
+	
 	
 	
 	
